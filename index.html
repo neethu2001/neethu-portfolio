@@ -1,236 +1,1830 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Neethu M | Portfolio</title>
-  <meta name="description" content="Neethu M's portfolio in data analytics, business analysis, product support, software development and web development.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--navy:#10213b;--deep:#091426;--blue:#4f7cff;--cyan:#5ce1d7;--ink:#172338;--muted:#68758a;--paper:#f5f7fb;--line:#e5eaf2}
-    *{scroll-behavior:smooth}
-    body{font-family:"DM Sans",sans-serif;color:var(--ink);line-height:1.7}
-    h1,h2,h3,h4,h5,.navbar-brand{font-family:"Manrope",sans-serif}
-    .navbar{background:rgba(9,20,38,.97);backdrop-filter:blur(10px)}
-    .navbar-brand{font-weight:800;letter-spacing:-.04em}.brand-dot{color:var(--cyan)}
-    .navbar .nav-link{color:#d9e2f2;font-weight:600}.navbar .nav-link:hover{color:var(--cyan)}
-    .hero{min-height:92vh;display:flex;align-items:center;color:#fff;background:radial-gradient(circle at 80% 20%,rgba(79,124,255,.25),transparent 30%),radial-gradient(circle at 10% 90%,rgba(92,225,215,.13),transparent 28%),linear-gradient(135deg,var(--deep),var(--navy) 70%,#19345a);padding:7rem 0 4rem}
-    .eyebrow{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .85rem;border:1px solid rgba(92,225,215,.4);border-radius:50rem;color:#aaf5ef;background:rgba(92,225,215,.08);font-size:.85rem;font-weight:700}
-    .hero h1{font-size:clamp(2.8rem,6vw,5.25rem);line-height:1.08;letter-spacing:-.065em;font-weight:800}.hero h1 span{color:var(--cyan)}
-    .hero-copy{color:#c8d4e7;max-width:660px;font-size:1.1rem}
-    .btn-accent{background:var(--cyan);border:1px solid var(--cyan);color:#08202b;font-weight:800;padding:.8rem 1.15rem;border-radius:.8rem}
-    .btn-accent:hover{background:#7cece4;border-color:#7cece4;color:#08202b}
-    .btn-outline-light{border-radius:.8rem;padding:.8rem 1.15rem;font-weight:700}
-    .hero-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:1.4rem;padding:1.6rem;box-shadow:0 24px 70px rgba(0,0,0,.16)}
-    .mini-label{color:#9eb0ca;font-size:.78rem;text-transform:uppercase;letter-spacing:.13em}
-    .skill-chip{display:inline-block;padding:.4rem .65rem;margin:.2rem .12rem;border-radius:.6rem;color:#e8efff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:.84rem}
-    section{padding:5.2rem 0}.soft-section{background:var(--paper)}
-    .section-kicker{color:#4d6fe4;text-transform:uppercase;font-size:.78rem;font-weight:800;letter-spacing:.16em}
-    .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.05em;color:var(--navy)}
-    .section-lead{max-width:720px;color:var(--muted)}.muted{color:var(--muted)}
-    .info-card,.skill-group,.project-card,.experience-card,.cert-card{height:100%;border:1px solid var(--line);border-radius:1.1rem;background:#fff;transition:transform .22s,box-shadow .22s}
-    .info-card,.skill-group,.experience-card,.cert-card{padding:1.45rem}
-    .info-card:hover,.project-card:hover,.experience-card:hover,.cert-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(22,42,77,.09)}
-    .icon-box{display:inline-flex;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:.9rem;color:#315be6;background:#edf1ff;font-size:1.35rem}
-    .skill-pill{display:inline-block;border:1px solid #dce5f6;color:#32445f;background:#f7f9ff;padding:.35rem .65rem;border-radius:50rem;margin:.18rem .1rem;font-size:.84rem}
-    .project-card{overflow:hidden;display:flex;flex-direction:column}
-    .project-image{width:100%;height:220px;object-fit:cover;display:block;background:#e9eef8}
-    .project-body{padding:1.35rem;display:flex;flex-direction:column;flex:1}
-    .tag{font-size:.75rem;color:#4359a7;background:#eef1ff;border-radius:50rem;padding:.28rem .55rem;margin:.12rem .1rem;display:inline-block}
-    .project-card .project-link{margin-top:auto;padding-top:1rem;text-decoration:none;font-weight:700;color:#315be6}
-    .project-card .project-link:hover{color:#1738a7}
-    .date-label{display:inline-block;border-radius:50rem;padding:.3rem .7rem;color:#3659c8;background:#edf1ff;font-size:.8rem;font-weight:700}
-    .timeline{position:relative;padding-left:1.6rem}.timeline:before{content:"";position:absolute;top:.3rem;bottom:.3rem;left:.35rem;width:2px;background:#dce4f4}
-    .timeline-item{position:relative;margin-bottom:1.5rem}.timeline-item:before{content:"";position:absolute;left:-1.55rem;top:.45rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--blue);border:3px solid #e9edff}
-    .contact-section{color:#fff;background:linear-gradient(135deg,var(--deep),#17365d)}.contact-section .section-title{color:#fff}.contact-section .section-lead{color:#c6d2e6}
-    .contact-link{display:flex;gap:.8rem;align-items:center;padding:1rem;border:1px solid rgba(255,255,255,.14);border-radius:.9rem;color:#f0f5ff;text-decoration:none;overflow-wrap:anywhere;background:rgba(255,255,255,.04)}
-    .contact-link:hover{color:var(--cyan);border-color:rgba(92,225,215,.5)}
-    footer{background:#07101e;color:#a9b8cd}footer a{color:var(--cyan);text-decoration:none}
-    .back-top{position:fixed;right:1.1rem;bottom:1.1rem;z-index:1000;width:2.8rem;height:2.8rem;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#09202c;text-decoration:none;box-shadow:0 8px 25px #0002}
-    @media(max-width:767px){section{padding:4rem 0}.hero{min-height:auto}.hero-panel{margin-top:1rem}.project-image{height:200px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neethu M | Portfolio</title>
+    <meta name="description" content="Portfolio of Neethu M, a technology professional with experience in product support, business analytics, Python development, and client management.">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1220;
+            --navy-light: #111c30;
+            --teal: #16c7b2;
+            --teal-dark: #0d9488;
+            --white: #ffffff;
+            --light: #f5f8fb;
+            --text: #243044;
+            --muted: #697586;
+            --border: #e6ebf1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 90px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-label {
+            color: var(--teal-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            color: var(--navy);
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .accent {
+            color: var(--teal);
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: rgba(11, 18, 32, 0.97);
+            padding: 15px 0;
+            backdrop-filter: blur(12px);
+        }
+
+        .navbar-brand {
+            color: var(--white) !important;
+            font-family: 'Manrope', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .navbar-brand span {
+            color: var(--teal);
+        }
+
+        .navbar .nav-link {
+            color: #d3dce8;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: var(--teal);
+        }
+
+        .navbar-toggler {
+            border-color: #607086;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            background:
+                radial-gradient(ellipse at 85% 20%, rgba(22, 199, 178, 0.14), transparent 35%),
+                linear-gradient(135deg, #0b1220 0%, #101d32 100%);
+            padding: 125px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 15px;
+            border: 1px solid rgba(22, 199, 178, 0.35);
+            border-radius: 30px;
+            background: rgba(22, 199, 178, 0.08);
+            color: #9af3e7;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--teal);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            color: #b6c2d3;
+            font-size: 17px;
+            max-width: 600px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 13px 23px;
+            border-radius: 9px;
+            color: var(--navy);
+            background: var(--teal);
+            font-weight: 800;
+            border: 1px solid var(--teal);
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            color: var(--navy);
+            background: #6be5d6;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 13px 23px;
+            border-radius: 9px;
+            color: var(--white);
+            border: 1px solid #506078;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            color: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .hero-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .hero-socials a {
+            display: flex;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            color: #d4deeb;
+            border: 1px solid #33435a;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .hero-socials a:hover {
+            color: var(--teal);
+            border-color: var(--teal);
+            transform: translateY(-3px);
+        }
+
+        .hero-card {
+            max-width: 390px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 24px;
+            background: rgba(255,255,255,0.045);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.18);
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #16c7b2, #7be9dc);
+            color: var(--navy);
+            font-size: 40px;
+            font-weight: 800;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .hero-card h3 {
+            color: var(--white);
+            font-size: 22px;
+        }
+
+        .hero-card > p {
+            color: #aab8cb;
+            font-size: 13px;
+        }
+
+        .hero-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #d4deeb;
+            font-size: 13px;
+            padding: 12px 0;
+            border-top: 1px solid rgba(255,255,255,0.09);
+        }
+
+        .hero-info i {
+            color: var(--teal);
+            font-size: 18px;
+        }
+
+        /* ABOUT */
+
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-card {
+            height: 100%;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--white);
+        }
+
+        .about-card p {
+            color: var(--muted);
+        }
+
+        .about-highlight {
+            padding: 22px;
+            margin-top: 20px;
+            border-left: 4px solid var(--teal);
+            border-radius: 0 12px 12px 0;
+            background: var(--light);
+            color: #455267;
+        }
+
+        .stat-card {
+            height: 100%;
+            padding: 24px 15px;
+            text-align: center;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .stat-card h3 {
+            color: var(--teal-dark);
+            font-size: 30px;
+        }
+
+        .stat-card p {
+            color: var(--muted);
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* SKILLS */
+
+        .skills-section {
+            background: var(--light);
+        }
+
+        .skill-card {
+            height: 100%;
+            padding: 27px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #9ce6dc;
+            box-shadow: 0 15px 35px rgba(11,18,32,0.06);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 13px;
+            background: #e4faf6;
+            color: var(--teal-dark);
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h5 {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 6px 10px;
+            border-radius: 6px;
+            background: #f0f4f8;
+            color: #475569;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* PROJECTS */
+
+        .projects-section {
+            background: var(--white);
+        }
+
+        .project-card {
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(11,18,32,0.09);
+        }
+
+        .project-image {
+            height: 205px;
+            width: 100%;
+            object-fit: cover;
+            background: #e9eef4;
+        }
+
+        .project-content {
+            padding: 23px;
+        }
+
+        .project-content h5 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .project-link {
+            color: var(--teal-dark);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .project-link:hover {
+            color: var(--navy);
+        }
+
+        /* EXPERIENCE */
+
+        .experience-section {
+            background: var(--light);
+        }
+
+        .experience-timeline {
+            max-width: 850px;
+            margin: 0 auto;
+            border-left: 2px solid #bcece4;
+            padding-left: 30px;
+        }
+
+        .experience-item {
+            position: relative;
+            padding: 26px;
+            margin-bottom: 25px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            top: 33px;
+            left: -38px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--teal);
+            border: 3px solid var(--light);
+            box-shadow: 0 0 0 2px var(--teal);
+        }
+
+        .experience-date {
+            display: inline-block;
+            margin-bottom: 9px;
+            color: var(--teal-dark);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .experience-item h4 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+            color: #586578;
+            font-size: 14px;
+        }
+
+        .experience-item li {
+            margin-bottom: 7px;
+        }
+
+        /* EDUCATION, LEADERSHIP & ACTIVITIES */
+
+        #education {
+            background: var(--white);
+        }
+
+        .portfolio-card {
+            height: 100%;
+            padding: 30px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(15,23,42,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            box-shadow: 0 14px 35px rgba(15,23,42,0.08);
+        }
+
+        .section-icon {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: #e0f7f4;
+            color: var(--teal-dark);
+            font-size: 23px;
+        }
+
+        .portfolio-card h4 {
+            font-size: 21px;
+            color: var(--navy);
+        }
+
+        .portfolio-card .card-subtitle {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            padding-bottom: 5px;
+            border-left: 2px solid #ccebe6;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: -6px;
+            width: 10px;
+            height: 10px;
+            background: var(--teal-dark);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: var(--teal-dark);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .timeline-item h5 {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--navy);
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .education-badge {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 5px 11px;
+            background: #eaf8f5;
+            color: #087f73;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 23px;
+        }
+
+        .activity-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 11px;
+            background: #f0f4fa;
+            color: var(--teal-dark);
+            font-size: 18px;
+        }
+
+        .activity-item h6 {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .activity-item p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .interest-card {
+            height: 100%;
+            padding: 23px;
+            background: #f8fafc;
+            border: 1px solid #edf1f5;
+            border-radius: 14px;
+            transition: 0.25s ease;
+        }
+
+        .interest-card:hover {
+            background: #eaf8f5;
+            border-color: #b7e8df;
+            transform: translateY(-3px);
+        }
+
+        .interest-card > i {
+            display: inline-block;
+            margin-bottom: 14px;
+            color: var(--teal-dark);
+            font-size: 24px;
+        }
+
+        .interest-card h6 {
+            font-size: 14px;
+            color: var(--navy);
+        }
+
+        .interest-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications-section {
+            background: var(--light);
+        }
+
+        .certification-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            height: 100%;
+            padding: 22px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .certification-icon {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #e4faf6;
+            color: var(--teal-dark);
+            border-radius: 12px;
+            font-size: 20px;
+        }
+
+        .certification-card h6 {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .certification-card p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-section .section-description {
+            color: #b4c0d1;
+        }
+
+        .contact-card {
+            height: 100%;
+            padding: 24px;
+            border: 1px solid #334258;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.035);
+        }
+
+        .contact-card i {
+            color: var(--teal);
+            font-size: 25px;
+            margin-bottom: 13px;
+        }
+
+        .contact-card h6 {
+            font-size: 14px;
+        }
+
+        .contact-card a,
+        .contact-card p {
+            overflow-wrap: anywhere;
+            color: #b9c6d8;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        .contact-card a:hover {
+            color: var(--teal);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 23px 0;
+            background: #080e19;
+            color: #8f9caf;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991px) {
+            .navbar .nav-link {
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 120px;
+            }
+
+            .hero-card {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .btn-primary-custom,
+            .btn-outline-custom {
+                padding: 11px 15px;
+                font-size: 13px;
+            }
+
+            .about-card,
+            .skill-card,
+            .portfolio-card {
+                padding: 21px;
+            }
+
+            .experience-timeline {
+                padding-left: 22px;
+            }
+
+            .experience-item {
+                padding: 20px;
+            }
+
+            .experience-item::before {
+                left: -30px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+        }
+    </style>
 </head>
-<body id="top">
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#top">Neethu<span class="brand-dot">.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-accent btn-sm px-3 py-2" href="#contact">Contact me</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <a class="navbar-brand" href="#home">Neethu<span>.</span></a>
 
-  <!-- Home / Hero -->
-  <header class="hero">
-    <div class="container"><div class="row align-items-center g-5">
-      <div class="col-lg-8">
-        <span class="eyebrow mb-4"><i class="bi bi-stars"></i> Data • Business • Technology</span>
-        <p class="text-uppercase small fw-bold mb-2" style="color:#a9b8d0;letter-spacing:.16em">Hello, I'm</p>
-        <h1 class="mb-4">Neethu M<span>.</span><br><span>Turning data into</span><br>better decisions.</h1>
-        <p class="hero-copy mb-4">I bring together data analytics, business understanding, and technical problem-solving to improve processes, support customers, and build practical digital solutions.</p>
-        <div class="d-flex flex-wrap gap-3">
-          <a class="btn btn-accent" href="#projects"><i class="bi bi-grid-1x2 me-2"></i>Explore my projects</a>
-          <a class="btn btn-outline-light" href="#contact"><i class="bi bi-chat-dots me-2"></i>Let's connect</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="d-flex flex-wrap gap-4 mt-4 pt-2 small" style="color:#c8d4e7">
-          <span><i class="bi bi-geo-alt me-2" style="color:var(--cyan)"></i>Kerala, India</span>
-          <span><i class="bi bi-bar-chart-line me-2" style="color:var(--cyan)"></i>Analytics & Insights</span>
-          <span><i class="bi bi-code-slash me-2" style="color:var(--cyan)"></i>Python & SQL</span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-7">
+                <div class="hero-tag">
+                    <span class="status-dot"></span>
+                    Technology · Analytics · Product Support
+                </div>
+
+                <h1>
+                    Hi, I'm <span class="accent">Neethu M.</span><br>
+                    I connect technology<br>
+                    with business.
+                </h1>
+
+                <p class="hero-description">
+                    A technology professional with experience in product support,
+                    Python development, business analytics, and client management.
+                    I enjoy solving problems, improving processes, and turning
+                    business requirements into practical solutions.
+                </p>
+
+                <div class="hero-buttons d-flex gap-3 flex-wrap">
+                    <a href="#projects" class="btn-primary-custom">
+                        Explore My Work <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="#contact" class="btn-outline-custom">
+                        Get In Touch <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/neethu2001"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/neethu-m-b9305b190"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="mailto:neethumadaparambil2001@gmail.com"
+                       aria-label="Email">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="hero-card text-center">
+                    <div class="profile-avatar">NM</div>
+
+                    <h3>Neethu M</h3>
+                    <p class="mb-4">Product Support · Analytics · Technology</p>
+
+                    <div class="hero-info text-start">
+                        <i class="bi bi-briefcase"></i>
+                        <span>Product Support & Client Management</span>
+                    </div>
+
+                    <div class="hero-info text-start">
+                        <i class="bi bi-code-slash"></i>
+                        <span>Python, SQL & Web Technologies</span>
+                    </div>
+
+                    <div class="hero-info text-start">
+                        <i class="bi bi-bar-chart-line"></i>
+                        <span>Business & Data Analytics</span>
+                    </div>
+
+                    <div class="hero-info text-start">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Kerala, India</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="hero-panel">
-          <p class="mini-label mb-2">Professional focus</p><h3 class="text-white fw-bold mb-3">People, processes & data.</h3>
-          <p style="color:#c8d4e7">Combining technical experience with client communication and a business-focused approach.</p>
-          <div class="my-3"><span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">Power BI</span><span class="skill-chip">Excel</span><span class="skill-chip">Business Analysis</span><span class="skill-chip">CRM & APIs</span></div>
-          <hr style="border-color:#ffffff26">
-          <div class="d-flex justify-content-between align-items-center"><div><div class="mini-label">Based in</div><strong>Kerala, India</strong></div><i class="bi bi-arrow-up-right-circle fs-2" style="color:var(--cyan)"></i></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">GET TO KNOW ME</span>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-description">
+                A combination of technical knowledge, analytical thinking,
+                and customer-focused problem-solving.
+            </p>
         </div>
-      </div>
-    </div></div>
-  </header>
 
-  <!-- About -->
-  <section id="about"><div class="container"><div class="row align-items-start g-5">
-    <div class="col-lg-5"><p class="section-kicker mb-2">A little about me</p><h2 class="section-title mb-3">Curious by nature.<br>Analytical by approach.</h2>
-      <p class="section-lead">My background spans software development, product support, business analysis, and web development. I enjoy understanding a problem, working with people to define what they need, and using technology or data to help solve it.</p>
-      <a href="#experience" class="btn btn-outline-primary rounded-3 px-4 mt-2">View my experience <i class="bi bi-arrow-right ms-2"></i></a>
-    </div>
-    <div class="col-lg-7"><div class="row g-3">
-      <div class="col-md-6"><div class="info-card"><div class="icon-box mb-3"><i class="bi bi-graph-up-arrow"></i></div><h5 class="fw-bold">Data-driven thinking</h5><p class="muted mb-0">Cleaning data, exploring trends, building dashboards, and communicating useful findings.</p></div></div>
-      <div class="col-md-6"><div class="info-card"><div class="icon-box mb-3"><i class="bi bi-people"></i></div><h5 class="fw-bold">Client collaboration</h5><p class="muted mb-0">Gathering requirements, coordinating solutions, managing support tickets, and building relationships.</p></div></div>
-      <div class="col-md-6"><div class="info-card"><div class="icon-box mb-3"><i class="bi bi-gear-wide-connected"></i></div><h5 class="fw-bold">Process improvement</h5><p class="muted mb-0">Using Python, SQL, APIs, and workflow improvements to reduce manual effort and friction.</p></div></div>
-      <div class="col-md-6"><div class="info-card"><div class="icon-box mb-3"><i class="bi bi-window"></i></div><h5 class="fw-bold">Digital solutions</h5><p class="muted mb-0">Developing responsive websites and supporting chatbot, WhatsApp, and CRM integrations.</p></div></div>
-    </div></div>
-  </div></div></section>
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7">
+                <div class="about-card">
+                    <h4 class="mb-3">Technology with a business perspective</h4>
 
-  <!-- Skills -->
-  <section id="skills" class="soft-section"><div class="container">
-    <div class="text-center mb-5"><p class="section-kicker mb-2">What I work with</p><h2 class="section-title mb-3">Skills & tools</h2><p class="section-lead mx-auto">A mix of technical tools, analytical methods, and communication skills for solving business problems.</p></div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4"><div class="skill-group"><div class="icon-box mb-3"><i class="bi bi-code-slash"></i></div><h5 class="fw-bold">Programming & Tools</h5><span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">Advanced Excel</span><span class="skill-pill">Git</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span></div></div>
-      <div class="col-md-6 col-lg-4"><div class="skill-group"><div class="icon-box mb-3"><i class="bi bi-bar-chart-line"></i></div><h5 class="fw-bold">Data Analytics</h5><span class="skill-pill">Power BI</span><span class="skill-pill">Tableau</span><span class="skill-pill">Data Cleaning</span><span class="skill-pill">ETL</span><span class="skill-pill">KPI Development</span><span class="skill-pill">Visualization</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">Predictive Modeling</span></div></div>
-      <div class="col-md-6 col-lg-4"><div class="skill-group"><div class="icon-box mb-3"><i class="bi bi-diagram-3"></i></div><h5 class="fw-bold">Business Analysis</h5><span class="skill-pill">Requirements Gathering</span><span class="skill-pill">Process Improvement</span><span class="skill-pill">Market Research</span><span class="skill-pill">Stakeholder Management</span><span class="skill-pill">Solution Consulting</span></div></div>
-      <div class="col-md-6 col-lg-4"><div class="skill-group"><div class="icon-box mb-3"><i class="bi bi-headset"></i></div><h5 class="fw-bold">Product & Customer Support</h5><span class="skill-pill">Client Management</span><span class="skill-pill">Ticket Resolution</span><span class="skill-pill">Product Demos</span><span class="skill-pill">CRM</span><span class="skill-pill">Marketing & Sales</span></div></div>
-      <div class="col-md-6 col-lg-4"><div class="skill-group"><div class="icon-box mb-3"><i class="bi bi-plug"></i></div><h5 class="fw-bold">Integration & Testing</h5><span class="skill-pill">API Integration</span><span class="skill-pill">WhatsApp API</span><span class="skill-pill">Chatbot Creation</span><span class="skill-pill">Manual Testing</span><span class="skill-pill">Workflow Automation</span></div></div>
-      <div class="col-md-6 col-lg-4"><div class="skill-group"><div class="icon-box mb-3"><i class="bi bi-chat-square-heart"></i></div><h5 class="fw-bold">Professional Skills</h5><span class="skill-pill">Problem Solving</span><span class="skill-pill">Critical Thinking</span><span class="skill-pill">Communication</span><span class="skill-pill">Leadership</span><span class="skill-pill">Team Management</span></div></div>
-    </div>
-  </div></section>
+                    <p>
+                        I am a Computer Science and Engineering graduate with
+                        professional experience in Python development and
+                        product support. My work has exposed me to technical
+                        troubleshooting, database operations, client onboarding,
+                        business analytics, and product implementation.
+                    </p>
 
-  <!-- Projects: each card has its own image and project-specific content -->
-  <section id="projects"><div class="container">
-    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-5">
-      <div><p class="section-kicker mb-2">Selected work</p><h2 class="section-title mb-2">Projects that solve problems</h2><p class="section-lead mb-0">A selection of analytics, machine learning, and process improvement projects from my resume.</p></div>
-      <a href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-3 px-4">Visit GitHub <i class="bi bi-github ms-2"></i></a>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4"><article class="project-card">
-        <img class="project-image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Business intelligence dashboard with charts and graphs" loading="lazy">
-        <div class="project-body"><span class="section-kicker">Business Intelligence</span><h5 class="fw-bold mt-2">Pizza Sales Forecast Dashboard</h5><p class="muted">Built an interactive dashboard to explore sales trends and support forecasting. Used SQL-driven preprocessing to prepare sales data for analysis.</p><div><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Forecasting</span></div><p class="small mt-3 mb-0"><strong>Resume-reported outcome:</strong> 15% improvement in forecasting accuracy.</p><a class="project-link" href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer">Explore project <i class="bi bi-arrow-up-right ms-1"></i></a></div>
-      </article></div>
-      <div class="col-md-6 col-lg-4"><article class="project-card">
-        <img class="project-image" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="Team discussing workforce performance and business data" loading="lazy">
-        <div class="project-body"><span class="section-kicker">People Analytics</span><h5 class="fw-bold mt-2">HR Analysis Dashboard</h5><p class="muted">Analyzed HR data to identify employee attrition patterns and present workforce insights through a SQL and Power BI dashboard.</p><div><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">HR Analytics</span></div><p class="small mt-3 mb-0"><strong>Resume-reported outcome:</strong> 10% reduction in turnover.</p><a class="project-link" href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer">Explore project <i class="bi bi-arrow-up-right ms-1"></i></a></div>
-      </article></div>
-      <div class="col-md-6 col-lg-4"><article class="project-card">
-        <img class="project-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85" alt="Laptop displaying website and analytics information" loading="lazy">
-        <div class="project-body"><span class="section-kicker">Data & Process</span><h5 class="fw-bold mt-2">AskmeOffers Data Pipeline Optimization</h5><p class="muted">Reviewed data and workflow processes, identified inefficiencies, and streamlined the pipeline to improve operational efficiency.</p><div><span class="tag">Data Pipeline</span><span class="tag">Optimization</span><span class="tag">Process Improvement</span></div><p class="small mt-3 mb-0"><strong>Resume-reported outcome:</strong> 20% efficiency gain.</p><a class="project-link" href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer">Explore project <i class="bi bi-arrow-up-right ms-1"></i></a></div>
-      </article></div>
-      <div class="col-md-6 col-lg-4"><article class="project-card">
-        <img class="project-image" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85" alt="Road traffic at night, representing traffic monitoring" loading="lazy">
-        <div class="project-body"><span class="section-kicker">Computer Vision</span><h5 class="fw-bold mt-2">Traffic Rules Violation Detection</h5><p class="muted">Developed a real-time traffic violation detection system using a YOLO-based deep learning model and Flask for the application layer.</p><div><span class="tag">Deep Learning</span><span class="tag">YOLO</span><span class="tag">Flask</span></div><p class="small mt-3 mb-0"><strong>Resume-reported result:</strong> 85% detection accuracy.</p><a class="project-link" href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer">Explore project <i class="bi bi-arrow-up-right ms-1"></i></a></div>
-      </article></div>
-      <div class="col-md-6 col-lg-4"><article class="project-card">
-        <img class="project-image" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=85" alt="Secure online payment using a bank card" loading="lazy">
-        <div class="project-body"><span class="section-kicker">Machine Learning</span><h5 class="fw-bold mt-2">Credit Card Fraud Detection</h5><p class="muted">Built a supervised machine learning model using Random Forest to identify potentially fraudulent credit card transactions.</p><div><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span></div><p class="small mt-3 mb-0"><strong>Resume-reported result:</strong> 92% precision.</p><a class="project-link" href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer">Explore project <i class="bi bi-arrow-up-right ms-1"></i></a></div>
-      </article></div>
-      <div class="col-md-6 col-lg-4"><article class="project-card">
-        <img class="project-image" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85" alt="Customer using a card for an online purchase" loading="lazy">
-        <div class="project-body"><span class="section-kicker">Web & Client Solutions</span><h5 class="fw-bold mt-2">Getaway Beach Resort Website</h5><p class="muted">Freelance web development project: created a responsive website based on client requirements and brand guidelines, with content updates and ongoing support.</p><div><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">Client Delivery</span></div><p class="small mt-3 mb-0"><strong>Focus:</strong> Responsive design and user experience.</p><a class="project-link" href="https://getawaybeachresort.com/" target="_blank" rel="noopener noreferrer">View website <i class="bi bi-arrow-up-right ms-1"></i></a></div>
-      </article></div>
-    </div>
-    <p class="small muted mt-4"><i class="bi bi-info-circle me-1"></i>Project images are illustrative examples, not screenshots of the actual dashboards or applications. Replace them with your real project screenshots when available. Outcome figures are taken from the resume.</p>
-  </div></section>
+                    <p>
+                        In my current role at Adlinks Technologies, I work with
+                        clients to understand their requirements, resolve product
+                        issues, coordinate implementations, and support solutions
+                        involving CRM integrations, WhatsApp APIs, and automation.
+                    </p>
 
-  <!-- Experience -->
-  <section id="experience" class="soft-section"><div class="container">
-    <div class="mb-5"><p class="section-kicker mb-2">My journey</p><h2 class="section-title mb-2">Work experience</h2><p class="section-lead">Experience across product support, software engineering, client solutions, and web development.</p></div>
-    <div class="timeline">
-      <div class="timeline-item"><div class="experience-card">
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-2"><div><h5 class="fw-bold mb-1">Product Support Manager</h5><p class="mb-2 text-primary fw-semibold">Adlinks Technologies Pvt. Ltd. · Kochi</p></div><span class="date-label align-self-start">Dec 2025 – Present</span></div>
-        <ul class="muted mb-0"><li>Create and customize automated chatbots to improve customer interactions.</li><li>Integrate WhatsApp APIs and CRM platforms for messaging and communication workflows.</li><li>Manage support tickets from creation through resolution and maintain client relationships.</li><li>Gather requirements from domestic and international clients and coordinate suitable solutions, marketing, and communication.</li></ul>
-      </div></div>
-      <div class="timeline-item"><div class="experience-card">
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-2"><div><h5 class="fw-bold mb-1">Freelance Web Developer</h5><p class="mb-2 text-primary fw-semibold">Getaway Beach Resort Website</p></div><span class="date-label align-self-start">Apr 2026 – Present</span></div>
-        <ul class="muted mb-0"><li>Designed and developed a website based on client requirements and brand guidelines.</li><li>Created a responsive experience for desktop and mobile devices.</li><li>Handled website customization, content updates, and ongoing client support.</li></ul>
-      </div></div>
-      <div class="timeline-item"><div class="experience-card">
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-2"><div><h5 class="fw-bold mb-1">Associate Software Engineer</h5><p class="mb-2 text-primary fw-semibold">LDTech · Bhubaneswar</p></div><span class="date-label align-self-start">Aug 2023 – Aug 2024</span></div>
-        <ul class="muted mb-0"><li>Automated XML workflows and database operations using Python, reducing manual effort by 30%.</li><li>Optimized SQL queries and decreased database latency by 25%.</li><li>Prepared product analysis reports to support business decisions and performance improvements.</li><li>Collaborated with cross-functional teams on real-time system enhancements.</li></ul>
-      </div></div>
-      <div class="timeline-item"><div class="experience-card">
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-2"><div><h5 class="fw-bold mb-1">Sales & Marketing Intern</h5><p class="mb-2 text-primary fw-semibold">MyCaptain · Online</p></div><span class="date-label align-self-start">Aug 2020 – Sep 2020</span></div>
-        <p class="muted mb-0">Supported outreach and community growth, and analyzed engagement data to improve content and campaign decisions.</p>
-      </div></div>
-      <div class="timeline-item"><div class="experience-card">
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-2"><div><h5 class="fw-bold mb-1">Web Development Intern</h5><p class="mb-2 text-primary fw-semibold">Open Leaves LLP</p></div><span class="date-label align-self-start">Jun 2022</span></div>
-        <p class="muted mb-0">Gained hands-on experience designing and developing responsive, user-friendly web applications.</p>
-      </div></div>
-    </div>
-  </div></section>
+                    <p>
+                        My development experience has strengthened my understanding
+                        of Python, SQL, databases, and process improvement.
+                        I am interested in opportunities where I can combine
+                        technical problem-solving with business analysis and
+                        customer success.
+                    </p>
 
-  <!-- Education -->
-  <section id="education"><div class="container"><div class="row g-5">
-    <div class="col-lg-6"><p class="section-kicker mb-2">Learning foundation</p><h2 class="section-title mb-4">Education</h2>
-      <div class="experience-card mb-3"><span class="date-label">2019 – 2023</span><h5 class="fw-bold mt-3 mb-1">B.Tech in Computer Science & Engineering</h5><p class="muted mb-1">Adi Shankara Institute of Engineering & Technology, Kerala</p><strong>CGPA: 8.0</strong></div>
-      <div class="experience-card"><span class="date-label">2017 – 2019</span><h5 class="fw-bold mt-3 mb-1">Higher Secondary Education</h5><p class="muted mb-1">Government Janatha Higher Secondary School</p><strong>88%</strong></div>
-    </div>
-    <div class="col-lg-6"><p class="section-kicker mb-2">Continuous learning</p><h2 class="section-title mb-4">Certifications</h2>
-      <div class="row g-3">
-        <div class="col-12"><div class="cert-card d-flex gap-3 align-items-start"><div class="icon-box flex-shrink-0"><i class="bi bi-award"></i></div><div><h6 class="fw-bold mb-1">Google Professional Data Analytics</h6><p class="muted mb-0">Coursera</p></div></div></div>
-        <div class="col-12"><div class="cert-card d-flex gap-3 align-items-start"><div class="icon-box flex-shrink-0"><i class="bi bi-file-earmark-spreadsheet"></i></div><div><h6 class="fw-bold mb-1">Microsoft Excel Functions & Formulas</h6><p class="muted mb-0">Coursera</p></div></div></div>
-        <div class="col-12"><div class="cert-card d-flex gap-3 align-items-start"><div class="icon-box flex-shrink-0"><i class="bi bi-code-square"></i></div><div><h6 class="fw-bold mb-1">Python Programming with UST</h6><p class="muted mb-0">Coursera</p></div></div></div>
-        <div class="col-12"><div class="cert-card d-flex gap-3 align-items-start"><div class="icon-box flex-shrink-0"><i class="bi bi-robot"></i></div><div><h6 class="fw-bold mb-1">ChatGPT & AI Tools for Data Analysis</h6><p class="muted mb-0">be10X</p></div></div></div>
-        <div class="col-12"><div class="cert-card d-flex gap-3 align-items-start"><div class="icon-box flex-shrink-0"><i class="bi bi-laptop"></i></div><div><h6 class="fw-bold mb-1">Python & Django Full Stack Development</h6><p class="muted mb-0">Avodha · 2025</p></div></div></div>
-        <div class="col-12"><div class="cert-card d-flex gap-3 align-items-start"><div class="icon-box flex-shrink-0"><i class="bi bi-graph-up"></i></div><div><h6 class="fw-bold mb-1">Data Science</h6><p class="muted mb-0">NSDC · 2025</p></div></div></div>
-      </div>
-    </div>
-  </div>
-  <div class="mt-5 p-4 rounded-4" style="background:#f0f4ff"><p class="section-kicker mb-2">Leadership & activities</p><div class="row g-3">
-    <div class="col-md-6 col-lg-3"><strong><i class="bi bi-people me-2 text-primary"></i>Secretary</strong><p class="muted mb-0 small">HackClub · 2020–2022</p></div>
-    <div class="col-md-6 col-lg-3"><strong><i class="bi bi-pencil-square me-2 text-primary"></i>Content Writer</strong><p class="muted mb-0 small">TinkerHub · 2020–2022</p></div>
-    <div class="col-md-6 col-lg-3"><strong><i class="bi bi-heart me-2 text-primary"></i>Executive Committee</strong><p class="muted mb-0 small">National Service Scheme · 2019–2023</p></div>
-    <div class="col-md-6 col-lg-3"><strong><i class="bi bi-lightning-charge me-2 text-primary"></i>District Energy Cell</strong><p class="muted mb-0 small">Organiser & Counsellor · 2023–2024</p></div>
-  </div></div>
-  </div></section>
+                    <div class="about-highlight">
+                        <strong>My approach:</strong>
+                        Understand the problem, analyse the requirements,
+                        communicate clearly, and work towards a practical solution.
+                    </div>
+                </div>
+            </div>
 
-  <!-- Contact -->
-  <section id="contact" class="contact-section"><div class="container"><div class="row g-5 align-items-center">
-    <div class="col-lg-6"><p class="section-kicker mb-2" style="color:var(--cyan)">Get in touch</p><h2 class="section-title mb-3">Let's build something useful.</h2><p class="section-lead mb-4">Have an opportunity, a project idea, or a question? Feel free to reach out. I'm happy to connect and discuss how I can contribute.</p>
-      <a class="btn btn-accent" href="mailto:neethumadaparambil2001@gmail.com?subject=Portfolio%20Enquiry"><i class="bi bi-envelope me-2"></i>Email me</a>
-    </div>
-    <div class="col-lg-6"><div class="d-grid gap-3">
-      <a class="contact-link" href="mailto:neethumadaparambil2001@gmail.com"><i class="bi bi-envelope fs-4"></i><div><small class="d-block" style="color:#9eb0ca">Email</small>neethumadaparambil2001@gmail.com</div></a>
-      <a class="contact-link" href="tel:+919539783753"><i class="bi bi-telephone fs-4"></i><div><small class="d-block" style="color:#9eb0ca">Phone</small>+91 9539783753</div></a>
-      <a class="contact-link" href="https://www.linkedin.com/in/neethu-m-b9305b190" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin fs-4"></i><div><small class="d-block" style="color:#9eb0ca">LinkedIn</small>Connect with me</div></a>
-      <a class="contact-link" href="https://github.com/neethu2001" target="_blank" rel="noopener noreferrer"><i class="bi bi-github fs-4"></i><div><small class="d-block" style="color:#9eb0ca">GitHub</small>View my code</div></a>
-    </div></div>
-  </div></div></section>
+            <div class="col-lg-5">
+                <div class="row g-3 h-100">
+                    <div class="col-6">
+                        <div class="stat-card">
+                            <h3>Python</h3>
+                            <p>Development Experience</p>
+                        </div>
+                    </div>
 
-  <footer class="py-4"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"><p class="mb-0 small">© <span id="year"></span> Neethu M. Built with Bootstrap.</p><a class="small" href="#top">Back to top ↑</a></div></footer>
-  <a class="back-top" href="#top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+                    <div class="col-6">
+                        <div class="stat-card">
+                            <h3>SQL</h3>
+                            <p>Data & Database Operations</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="stat-card">
+                            <h3>CRM</h3>
+                            <p>Integration & Support</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="stat-card">
+                            <h3>BI</h3>
+                            <p>Analytics & Reporting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">WHAT I WORK WITH</span>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-description">
+                Technical tools and professional skills developed through
+                projects, training, and work experience.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-code-slash"></i></div>
+                    <h5>Programming & Development</h5>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-database"></i></div>
+                    <h5>Data & Databases</h5>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">ETL</span>
+                        <span class="skill-tag">Database Management</span>
+                        <span class="skill-tag">Query Optimization</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-bar-chart-line"></i></div>
+                    <h5>Analytics & Reporting</h5>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Advanced Excel</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Dashboards</span>
+                        <span class="skill-tag">KPI Reporting</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-headset"></i></div>
+                    <h5>Product & Client Support</h5>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Troubleshooting</span>
+                        <span class="skill-tag">Ticket Management</span>
+                        <span class="skill-tag">Client Onboarding</span>
+                        <span class="skill-tag">Product Demos</span>
+                        <span class="skill-tag">Client Communication</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-diagram-3"></i></div>
+                    <h5>Business & Process Analysis</h5>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Requirements Analysis</span>
+                        <span class="skill-tag">Process Improvement</span>
+                        <span class="skill-tag">Business Reporting</span>
+                        <span class="skill-tag">Documentation</span>
+                        <span class="skill-tag">Stakeholder Coordination</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-robot"></i></div>
+                    <h5>Integrations & Automation</h5>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CRM Integrations</span>
+                        <span class="skill-tag">WhatsApp API</span>
+                        <span class="skill-tag">Chatbots</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Workflow Automation</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">SELECTED WORK</span>
+            <h2 class="section-title">Projects & Case Studies</h2>
+            <p class="section-description">
+                A selection of technical projects and analytics work.
+                Visit my GitHub profile to explore available repositories.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=80"
+                        alt="Road traffic at night"
+                        loading="lazy">
+
+                    <div class="project-content">
+                        <h5>Motorcycle Rules Violation Detection</h5>
+                        <p>
+                            A computer vision project focused on detecting
+                            traffic rule violations from road imagery and video.
+                        </p>
+                        <div class="skill-tags mb-3">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">YOLO</span>
+                            <span class="skill-tag">Computer Vision</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/neethu2001"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore Project <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+                        alt="Sales and payment analysis"
+                        loading="lazy">
+
+                    <div class="project-content">
+                        <h5>Pizza Sales Report</h5>
+                        <p>
+                            A sales analytics project exploring revenue,
+                            product performance, order trends, and key metrics.
+                        </p>
+                        <div class="skill-tags mb-3">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Data Analysis</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/neethu2001"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore Project <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+                        alt="Business analytics dashboard"
+                        loading="lazy">
+
+                    <div class="project-content">
+                        <h5>HR Analysis Dashboard</h5>
+                        <p>
+                            An analytics dashboard for examining HR metrics,
+                            workforce patterns, and employee-related insights.
+                        </p>
+                        <div class="skill-tags mb-3">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Visualization</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/neethu2001"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore Project <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=900&q=80"
+                        alt="Software development code"
+                        loading="lazy">
+
+                    <div class="project-content">
+                        <h5>Fraud Detection Model</h5>
+                        <p>
+                            A machine learning project exploring classification
+                            techniques for identifying potentially fraudulent records.
+                        </p>
+                        <div class="skill-tags mb-3">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Random Forest</span>
+                            <span class="skill-tag">Machine Learning</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/neethu2001"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore Project <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+                        alt="Digital analytics and web performance"
+                        loading="lazy">
+
+                    <div class="project-content">
+                        <h5>Getaway Beach Resort Website</h5>
+                        <p>
+                            A responsive hospitality website project designed
+                            to present resort information, facilities, and contact details.
+                        </p>
+                        <div class="skill-tags mb-3">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://getawaybeachresort.com/"
+                           target="_blank" rel="noopener noreferrer">
+                            Visit Website <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                        alt="Web technology and digital tools"
+                        loading="lazy">
+
+                    <div class="project-content">
+                        <h5>Askmeoffers Coupon Extension</h5>
+                        <p>
+                            A web-focused project related to coupon discovery
+                            and improving the online shopping experience.
+                        </p>
+                        <div class="skill-tags mb-3">
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Browser Tools</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/neethu2001"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore Project <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="https://github.com/neethu2001"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-primary-custom">
+                <i class="bi bi-github"></i> View GitHub Profile
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section" id="experience">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">MY PROFESSIONAL JOURNEY</span>
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-description">
+                Experience across product support, software development,
+                client coordination, and digital solutions.
+            </p>
+        </div>
+
+        <div class="experience-timeline">
+
+            <div class="experience-item">
+                <span class="experience-date">DEC 2025 – PRESENT</span>
+                <h4>Product Support Manager</h4>
+                <p class="experience-company">Adlinks Technologies</p>
+
+                <ul>
+                    <li>Support client onboarding, product demonstrations, and implementation coordination.</li>
+                    <li>Manage support tickets from issue creation through troubleshooting and resolution.</li>
+                    <li>Coordinate CRM integrations, WhatsApp API solutions, chatbots, and communication workflows.</li>
+                    <li>Understand domestic and international client requirements and work with relevant teams on solutions.</li>
+                    <li>Contribute to client engagement, product communication, and marketing-related activities.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <span class="experience-date">APR 2026 – PRESENT</span>
+                <h4>Freelance Web Developer</h4>
+                <p class="experience-company">Website Design & Development</p>
+
+                <ul>
+                    <li>Design and develop responsive websites using HTML, CSS, Bootstrap, and JavaScript.</li>
+                    <li>Work with clients to understand requirements, organise content, and improve website presentation.</li>
+                    <li>Assist with website deployment, domain configuration, DNS records, and email troubleshooting.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <span class="experience-date">AUG 2023 – AUG 2024</span>
+                <h4>Associate Software Engineer</h4>
+                <p class="experience-company">LDTech · Bhubaneswar</p>
+
+                <ul>
+                    <li>Developed Python-based workflows and supported database operations.</li>
+                    <li>Worked with SQL queries, data analysis, reporting, and database management.</li>
+                    <li>Supported technical troubleshooting and the resolution of client-related issues.</li>
+                    <li>Contributed to workflow improvements that reduced manual effort and improved query performance.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <span class="experience-date">JUN 2022</span>
+                <h4>Internship Experience</h4>
+                <p class="experience-company">Open Leaves</p>
+
+                <ul>
+                    <li>Gained exposure to professional workflows and practical technology-related activities.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <span class="experience-date">AUG – SEP 2020</span>
+                <h4>Campus Ambassador</h4>
+                <p class="experience-company">MyCaptain</p>
+
+                <ul>
+                    <li>Supported student outreach and awareness of learning opportunities.</li>
+                    <li>Developed communication, coordination, and student-engagement skills.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION, LEADERSHIP & ACTIVITIES -->
+<section id="education">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="section-label">MY BACKGROUND</span>
+            <h2 class="section-title">
+                Education, <span class="accent" style="color:var(--teal-dark)">Leadership</span>
+                & Activities
+            </h2>
+            <p class="section-description">
+                My academic journey, leadership responsibilities,
+                and experiences beyond the classroom.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- EDUCATION -->
+            <div class="col-lg-6">
+                <div class="portfolio-card">
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="section-icon">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="mb-1">Education</h4>
+                            <p class="card-subtitle mb-0">Academic qualifications</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-4">
+                        <span class="timeline-date">2019 – 2023</span>
+
+                        <h5>B.Tech in Computer Science & Engineering</h5>
+
+                        <p class="mb-1">
+                            Adi Shankara Institute of Engineering and Technology
+                        </p>
+
+                        <span class="education-badge">CGPA: 7.98 / 10</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">2017 – 2019</span>
+
+                        <h5>Higher Secondary Education</h5>
+
+                        <p class="mb-1">Biology Science</p>
+                        <p class="mb-1">Kerala Higher Secondary Education</p>
+
+                        <span class="education-badge">Percentage: 88%</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- LEADERSHIP -->
+            <div class="col-lg-6">
+                <div class="portfolio-card">
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="section-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="mb-1">Leadership & Involvement</h4>
+                            <p class="card-subtitle mb-0">Campus roles and responsibilities</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+
+                        <div>
+                            <h6>HackClub Secretary</h6>
+                            <p class="mb-0">
+                                Contributed to student-led technology initiatives
+                                and collaborative campus activities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+
+                        <div>
+                            <h6>NSS Executive Committee</h6>
+                            <p class="mb-0">
+                                Participated in student initiatives and
+                                community-oriented activities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+
+                        <div>
+                            <h6>TinkerHub Content Writer</h6>
+                            <p class="mb-0">
+                                Contributed content to support campus
+                                technology initiatives and learning activities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-megaphone-fill"></i>
+                        </div>
+
+                        <div>
+                            <h6>MyCaptain Campus Ambassador</h6>
+                            <p class="mb-0">
+                                Supported student outreach, communication,
+                                and awareness of learning opportunities.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ACTIVITIES -->
+            <div class="col-12">
+                <div class="portfolio-card">
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="section-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="mb-1">Activities & Interests</h4>
+                            <p class="card-subtitle mb-0">
+                                Creativity, communication, and continuous learning
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="interest-card">
+                                <i class="bi bi-mic-fill"></i>
+                                <h6>Public Speaking</h6>
+                                <p>
+                                    Participated in speech competitions and
+                                    developed communication skills.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="interest-card">
+                                <i class="bi bi-camera-reels-fill"></i>
+                                <h6>Monoact & Street Drama</h6>
+                                <p>
+                                    Won first prizes in cultural performances,
+                                    developing confidence and creativity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="interest-card">
+                                <i class="bi bi-lightbulb-fill"></i>
+                                <h6>Science Exhibitions</h6>
+                                <p>
+                                    Participated in academic exhibitions
+                                    and creative learning activities.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="interest-card">
+                                <i class="bi bi-code-slash"></i>
+                                <h6>Technology & Coding</h6>
+                                <p>
+                                    Interested in software development,
+                                    analytical thinking, and digital solutions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="interest-card">
+                                <i class="bi bi-graph-up-arrow"></i>
+                                <h6>Continuous Learning</h6>
+                                <p>
+                                    Exploring tools, technologies, and
+                                    professional skills to support career growth.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="interest-card">
+                                <i class="bi bi-grid-3x3-gap-fill"></i>
+                                <h6>Chess</h6>
+                                <p>
+                                    Enjoy strategic thinking, planning,
+                                    and problem-solving.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications-section" id="certifications">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="section-label">CONTINUOUS LEARNING</span>
+            <h2 class="section-title">Certifications & Training</h2>
+            <p class="section-description">
+                Professional learning in analytics, programming,
+                productivity tools, and communication.
+            </p>
+        </div>
+
+        <div class="row g-3">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+                    <div>
+                        <h6>Google Professional Data Analytics</h6>
+                        <p>Data analysis and analytical workflows</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-translate"></i>
+                    </div>
+                    <div>
+                        <h6>Cambridge BEC Preliminary</h6>
+                        <p>Business English communication</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-file-earmark-spreadsheet"></i>
+                    </div>
+                    <div>
+                        <h6>Excel Functions & Formulas</h6>
+                        <p>Spreadsheet tools and calculations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    <div>
+                        <h6>Python Programming with UST</h6>
+                        <p>Programming fundamentals and Python</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <div>
+                        <h6>ChatGPT & AI Tools in Data Analysis</h6>
+                        <p>AI-assisted analytical workflows</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-server"></i>
+                    </div>
+                    <div>
+                        <h6>DevOps Training</h6>
+                        <p>Three-month training at LDTech</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="section-label">LET'S CONNECT</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-description">
+                Have an opportunity, project, or idea to discuss?
+                Feel free to reach out.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="contact-card text-center">
+                    <i class="bi bi-envelope"></i>
+                    <h6>Email</h6>
+                    <a href="mailto:neethumadaparambil2001@gmail.com">
+                        neethumadaparambil2001@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="contact-card text-center">
+                    <i class="bi bi-telephone"></i>
+                    <h6>Phone</h6>
+                    <a href="tel:+919539783753">
+                        +91 9539783753
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="contact-card text-center">
+                    <i class="bi bi-geo-alt"></i>
+                    <h6>Location</h6>
+                    <p>Kerala, India</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="mailto:neethumadaparambil2001@gmail.com"
+               class="btn-primary-custom">
+                Send Me an Email <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+
+        <div class="hero-socials justify-content-center mt-4">
+            <a href="https://github.com/neethu2001"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="GitHub">
+                <i class="bi bi-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/neethu-m-b9305b190"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="mailto:neethumadaparambil2001@gmail.com"
+               aria-label="Email">
+                <i class="bi bi-envelope"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>
+            © <span id="currentYear"></span> Neethu M.
+            Designed with care and a passion for technology.
+        </p>
+    </div>
+</footer>
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Update copyright year automatically
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    // Close the mobile navigation after clicking a link
+    document.querySelectorAll(".navbar .nav-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            const navbar = document.getElementById("mainNavbar");
+
+            if (navbar.classList.contains("show")) {
+                bootstrap.Collapse.getOrCreateInstance(navbar).hide();
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
